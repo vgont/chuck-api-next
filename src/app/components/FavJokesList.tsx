@@ -13,16 +13,20 @@ const FavJokesList: React.FC = () => {
   return (
     <div className="flex flex-col gap-5 w-2/3  items-center bg-amber-900 p-5 rounded">
       {FavJokes.length === 0 ? (
-        <p className="bold text-white">{"You don't have Favs already!"}</p>
+        <p className="bold text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
+          {"You don't have Favs already!"}
+        </p>
       ) : (
         FavJokes.map((favJoke, index) => (
           <div
             className="flex flex-wrap justify-center items-center w-full bg-amber-600 p-2 rounded"
             key={index}
           >
-            <p className="font-bold text-lg w-5/6">{favJoke}</p>
+            <p className="font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl md:w-5/6">
+              {favJoke}
+            </p>
             <button
-              className="ml-auto mr-10"
+              className="flex flex-wrap ml-auto justify-self-end md:mr-2 lg:mr-5 xl:mr-10 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
               onClick={() => handleRemoveJoke(favJoke)}
             >
               {TbTrashXFilled()}

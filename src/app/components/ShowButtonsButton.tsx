@@ -12,7 +12,7 @@ const ShowButtonsButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className="font-semibold hover:border-b-2 hover:border-black flex justify-center items-center gap-2 self-end"
+      className="mb-2 font-semibold hover:border-b-2 hover:border-black flex justify-center items-center gap-2 self-end text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl"
       onClick={onclick}
     >
       {name} {isShowing ? AiOutlineArrowUp() : AiOutlineArrowDown()}
