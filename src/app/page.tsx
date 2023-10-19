@@ -52,7 +52,7 @@ function App() {
     <>
       <div className="flex flex-col justify-center items-center gap-10 p-10">
         <ChangeScreenButton name="Change to favs" href="/pages/favs" />
-        <Title children="Chuck Norris Jokes" />
+        <Title title="Chuck Norris Jokes" />
         <ChuckIcon />
         <Joke
           joke={joke}

@@ -10,7 +10,7 @@ function favJokesPage() {
       <div className="flex flex-col justify-center items-center gap-10 p-10">
         <ChangeScreenButton name="Change to jokes" href="/" />
         <ChuckIcon />
-        <Title children="Your fav Jokes" />
+        <Title title="Your fav Jokes" />
         <FavJokesList />
       </div>
     </>
