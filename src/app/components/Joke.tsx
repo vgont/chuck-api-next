@@ -12,7 +12,9 @@ const Joke: React.FC<JokeProps> = ({ joke, onclick, isFavorited }) => {
   return (
     <blockquote className="bg-gray-100 p-4 border-l-4 border-amber-500 shadow-md flex w-2/3">
       <div className="w-full">
-        <p className="text-gray-800 text-2xl font-semibold italic">{joke}</p>
+        <p className="text-gray-800 text-2xl font-semibold italic w-11/12">
+          {joke}
+        </p>
         <div className="flex items-center w-full">
           <cite className="mt-2 text-gray-600 text-lg">
             - Someone who knows Chuck Norris
