@@ -1,5 +1,6 @@
-import useFavStore from "../stores/useFavStore";
 import { TbTrashXFilled } from "react-icons/tb";
+
+import useFavStore from "../stores/useFavStore";
 
 const FavJokesList: React.FC = () => {
   const { FavJokes, rmvFavJoke } = useFavStore();
@@ -12,7 +13,7 @@ const FavJokesList: React.FC = () => {
   return (
     <div className="flex flex-col gap-5 w-2/3  items-center bg-amber-900 p-5 rounded">
       {FavJokes.length === 0 ? (
-        <p className="bold text-white">You don't have Favs already!</p>
+        <p className="bold text-white">{"You don't have Favs already!"}</p>
       ) : (
         FavJokes.map((favJoke, index) => (
           <div
