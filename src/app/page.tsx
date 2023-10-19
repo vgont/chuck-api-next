@@ -31,8 +31,6 @@ function App() {
   const { category } = useCategoryStore();
   const { addFavJoke, rmvFavJoke } = useFavStore();
 
-  const handleShowCategories = () => {};
-
   const handleChangeJoke = () => {
     if (category !== "random")
       setUrlJoke(
