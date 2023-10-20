@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CategoryButtons from "./components/CategoryButtons";
 import ChangeScreenButton from "./components/ChangeScreenButton";
 import ChuckIcon from "./components/ChuckIcon";
@@ -11,7 +11,7 @@ import useFetchJoke from "./hooks/useFetchJoke";
 import useCategoryStore from "./stores/useCategoryStore";
 import useFavStore from "./stores/useFavStore";
 import ShowButtonsButton from "./components/ShowButtonsButton";
-import CategoryButton from "./components/CategoryButton";
+import NewJokeButton from "./components/NewJokeButton";
 
 function App() {
   const [isFavoritedJoke, setIsFavoriteJoke] = useState<boolean>(false);
@@ -31,16 +31,13 @@ function App() {
   const { category } = useCategoryStore();
   const { addFavJoke, rmvFavJoke } = useFavStore();
 
-  const handleChangeJoke = () => {
+  useEffect(() => {
     if (category !== "random")
       setUrlJoke(
         `https://api.chucknorris.io/jokes/random?category=${category}`
       );
     else setUrlJoke("https://api.chucknorris.io/jokes/random");
-
-    fetchNewJoke();
-    setIsFavoriteJoke(false);
-  };
+  }, [category]);
 
   const handleFavoriteJoke = () => {
     setIsFavoriteJoke(!isFavoritedJoke);
@@ -61,24 +58,21 @@ function App() {
         />
         <div className="flex flex-col justify-center items-center w-2/3">
           <ShowButtonsButton
-            name={
-              isShowingButtons ? "Hide all categories" : "Show all categories"
-            }
+            name={isShowingButtons ? "Hide categories" : "Show categories"}
             onclick={() => setIsShowingButtons(!isShowingButtons)}
             isShowing={isShowingButtons}
           />
           {isShowingButtons ? (
             <CategoryButtons
               categories={categories}
-              onclick={handleChangeJoke}
+              onclick={() => setIsShowingButtons(false)}
             />
           ) : (
-            <CategoryButton category="random" onclick={handleChangeJoke} />
+            <NewJokeButton onclick={fetchNewJoke} />
           )}
         </div>
       </div>
     </>
   );
 }
-
 export default App;
