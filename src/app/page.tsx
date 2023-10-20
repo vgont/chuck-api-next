@@ -45,6 +45,11 @@ function App() {
     return rmvFavJoke(joke);
   };
 
+  const handleClickNewJoke = () => {
+    fetchNewJoke();
+    setIsFavoriteJoke(false);
+  };
+
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-10 p-10">
@@ -68,7 +73,7 @@ function App() {
               onclick={() => setIsShowingButtons(false)}
             />
           ) : (
-            <NewJokeButton onclick={fetchNewJoke} />
+            <NewJokeButton onclick={handleClickNewJoke} />
           )}
         </div>
       </div>
