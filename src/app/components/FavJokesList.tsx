@@ -22,7 +22,7 @@ const FavJokesList: React.FC = () => {
             className="flex flex-wrap justify-center items-center w-full bg-amber-600 p-2 rounded"
             key={index}
           >
-            <p className="font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl md:w-5/6">
+            <p className="text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl md:w-5/6">
               {favJoke}
             </p>
             <button
